@@ -1,8 +1,18 @@
-OdeSolver.o : OdeSolver.cpp OdeSolver.hpp 
-	g++ -c -O OdeSolver.cpp
+CC=g++
+CFLAGS=-c -Wall
+LDFLAGS=
+SOURCES=main.cpp OdeSolver.cpp ForwardEulerSolver.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+EXECUTABLE=hello
+RM=rm
 
-prog.o :	prog.cpp OdeSolver.cpp
-	g++ -c -O prog.cpp
+all: $(SOURCES) $(EXECUTABLE)
+    
+$(EXECUTABLE): $(OBJECTS) 
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
-prog : OdeSolver.o prog.o
-	g++ -O -o prog OdeSolver.o prog.o
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@
+
+clean:
+	$(RM) *.o hello

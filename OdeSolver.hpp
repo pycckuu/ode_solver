@@ -2,12 +2,13 @@
 #define ODESOLVERDEF
 
 class OdeSolver {
-private:
+public:
+  double current_time;
+  double current_value;  
   double stepSize;
   double initialTime;
   double finalTime;
   double initialValue;
-public:
   void SetStepSize (double h);
   void SetTimeInterval (double t0, double t1);
   void SetInitialValue (double y0);
