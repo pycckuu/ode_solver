@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall
 LDFLAGS=
-SOURCES=main.cpp OdeSolver.cpp ForwardEulerSolver.cpp
+SOURCES=main.cpp OdeSolver.cpp ForwardEulerSolver.cpp Runge-Kutta.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=hello
 RM=rm

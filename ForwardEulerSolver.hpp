@@ -5,7 +5,6 @@
 
 class ForwardEulerSolver : public OdeSolver {
 public:
-  double RightHandSide(double y, double t);
   double SolveEquation();
 };
 
