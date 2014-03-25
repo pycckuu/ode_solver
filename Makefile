@@ -1,4 +1,4 @@
-CC=g++
+CC=mpic++
 CFLAGS=-c -Wall
 LDFLAGS=
 SOURCES=main.cpp OdeSolver.cpp ForwardEulerSolver.cpp Runge-Kutta.cpp
