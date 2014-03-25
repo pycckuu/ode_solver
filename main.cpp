@@ -1,8 +1,6 @@
-#include "stdio.h"
 #include "OdeSolver.hpp"
 #include "ForwardEulerSolver.hpp"
 #include "Runge-Kutta.hpp"
-#include <iostream>
 
 int main(int argc, char const *argv[])
 {
