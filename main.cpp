@@ -6,6 +6,8 @@
 
 int main(int argc, char const *argv[])
 {
+
+
   MPI::Init();
   RungeKutta example;
   example.stepSize = 0.1;
@@ -20,6 +22,5 @@ int main(int argc, char const *argv[])
   std::cout << rank << num_procs;
 
   MPI::Finalize();
-
   return 0;
 }

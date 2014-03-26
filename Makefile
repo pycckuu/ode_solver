@@ -1,18 +1,33 @@
-CC=mpic++
-CFLAGS=-c -Wall
+# CC=mpic++
+# CFLAGS=-c -Wall
 LDFLAGS=
 SOURCES=main.cpp OdeSolver.cpp ForwardEulerSolver.cpp Runge-Kutta.cpp
 OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=hello
-RM=rm
+EXECUTABLE=main
+# RM=rm
 
-all: $(SOURCES) $(EXECUTABLE)
+# include ${PETSC_DIR}/conf/variables
+# include ${PETSC_DIR}/conf/rules
+
+# all: $(SOURCES) $(EXECUTABLE)
     
-$(EXECUTABLE): $(OBJECTS) 
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+# $(EXECUTABLE): $(OBJECTS) 
+# 	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
-.cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
 
-clean:
-	$(RM) *.o hello
+
+CFLAGS           =
+FFLAGS		 			 =
+CPPFLAGS         =
+FPPFLAGS         =
+MANSEC           = SNES
+
+include ${PETSC_DIR}/conf/variables
+include ${PETSC_DIR}/conf/rules
+
+$(EXECUTABLE): ${OBJECTS}  chkopts
+	-${CLINKER} -o $(EXECUTABLE) ${OBJECTS} ${PETSC_SNES_LIB}
+	${RM} ${OBJECTS}
+
+del:
+	$(RM) *.o ${EXECUTABLE}

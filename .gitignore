@@ -1,2 +1,4 @@
 *sublime*
 *.o
+*.bak
+/main

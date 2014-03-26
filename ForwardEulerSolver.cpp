@@ -1,7 +1,5 @@
 #include "ForwardEulerSolver.hpp"
 
-
-
 double ForwardEulerSolver::SolveEquation() {
   std::ofstream results;
   results.open("results.txt");
