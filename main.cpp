@@ -7,7 +7,6 @@
 int main(int argc, char const *argv[])
 {
 
-
   MPI::Init();
   RungeKutta example;
   example.stepSize = 0.1;
